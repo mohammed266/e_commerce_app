@@ -1,8 +1,7 @@
-
-
 import 'package:flutter/material.dart';
-
 import '../../features/auth/presentation/views/log_in_view.dart';
+import '../../features/auth/presentation/views/sign_up_view.dart';
+import '../../features/home/presentation/views/main_home_view.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -13,6 +12,10 @@ class AppRouter {
       //   return MaterialPageRoute(builder: (_) => const SplashView());
       case Routes.kLoginView:
         return MaterialPageRoute(builder: (_) => const LogInView());
+      case Routes.kSingUpView:
+        return MaterialPageRoute(builder: (_) => const SignUpView());
+      case Routes.kMainHomeView:
+        return MaterialPageRoute(builder: (_) => const MainHomeView());
 
       default:
         return MaterialPageRoute(
