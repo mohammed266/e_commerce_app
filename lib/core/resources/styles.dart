@@ -26,4 +26,9 @@ class TextStyles {
     color: AppColor.kButtonColor,
     fontWeight: FontWeightHelper.medium,
   );
+
+  static TextStyle font12GrayNormal = TextStyle(
+    fontSize: 12.sp,
+    color: AppColor.kGrayColor,
+  );
 }
