@@ -1,6 +1,9 @@
+import 'package:e_commerce_app/core/di/service_lacator.dart';
+import '../../../../data/repos/products_repo/products_repo_impl.dart';
+import '../../../manager/products_cubit/products_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../../core/resources/styles.dart';
 import '../../../../../../core/resources/app_colors.dart';
@@ -13,24 +16,28 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          Text(
-            "Today's Deals",
-            style: TextStyles.font20WhiteBold.copyWith(
-              color: AppColor.kOrangeAccentColor,
+      child: BlocProvider(
+        create: (context) => ProductsCubit(getIt.get<ProductsRepoImpl>())
+          ..getTodayDealsProducts(),
+        child: Column(
+          children: [
+            Text(
+              "Today's Deals",
+              style: TextStyles.font20WhiteBold.copyWith(
+                color: AppColor.kOrangeAccentColor,
+              ),
             ),
-          ),
-          const TodayDealList(),
-          35.verticalSpace,
-          Text(
-            "Categories",
-            style: TextStyles.font20WhiteBold.copyWith(
-              color: AppColor.kOrangeAccentColor,
+            const TodayDealList(),
+            35.verticalSpace,
+            Text(
+              "Categories",
+              style: TextStyles.font20WhiteBold.copyWith(
+                color: AppColor.kOrangeAccentColor,
+              ),
             ),
-          ),
-          const CategorySection(),
-        ],
+            const CategorySection(),
+          ],
+        ),
       ),
     );
   }

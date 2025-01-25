@@ -1,3 +1,4 @@
+import '../../../../data/models/products_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -6,7 +7,8 @@ import 'item_image.dart';
 import 'item_title_price_cart.dart';
 
 class TodayDealListItem extends StatelessWidget {
-  const TodayDealListItem({super.key});
+  const TodayDealListItem({super.key, required this.productsModel});
+  final ProductsModel productsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +18,12 @@ class TodayDealListItem extends StatelessWidget {
       decoration: buildBoxDecoration(),
       child: Column(
         children: [
-          const ItemImage(
-            imageUrl:
-            'https://ntvb.tmsimg.com/assets/p22067809_b_h8_ag.jpg?w=960&h=540',
+          ItemImage(
+            imageUrl: productsModel.thumbnail,
           ),
           ItemTitlePriceCart(
-            title: 'title',
-            price: 'price',
+            title: productsModel.title,
+            price: productsModel.price.toString(),
             cartOnTap: () {},
           ),
         ],

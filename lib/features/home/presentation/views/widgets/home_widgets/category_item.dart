@@ -1,3 +1,4 @@
+import '../../../../data/models/products_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -6,7 +7,8 @@ import 'item_image.dart';
 import 'item_title_price_cart.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key});
+  const CategoryItem({super.key, required this.productsModel});
+  final ProductsModel productsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +18,15 @@ class CategoryItem extends StatelessWidget {
       width: 180.w,
       child: Column(
         children: [
-          const ItemImage(
-            imageUrl: 'https://ntvb.tmsimg.com/assets/p22067809_b_h8_ag.jpg?w=960&h=540',
+          ItemImage(
+            imageUrl: productsModel.thumbnail,
           ),
           ItemTitlePriceCart(
             isCategory: true,
-            price: 'price',
-            title: 'title',
+            price: productsModel.price.toString(),
+            title: productsModel.title,
+            rating: productsModel.rating.toString(),
             cartOnTap: (){},
-            rating: 'rating',
           ),
         ],
       ),

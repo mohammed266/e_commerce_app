@@ -1,6 +1,7 @@
+import '../../../manager/products_cubit/products_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../../core/resources/app_colors.dart';
 
 class CategoriesTitlesList extends StatefulWidget {
@@ -17,6 +18,7 @@ class _CategoriesTitlesListState extends State<CategoriesTitlesList> {
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+    context.read<ProductsCubit>().fetchProductsByCategory(selectedCategory);
   }
 
   @override
@@ -72,7 +74,9 @@ class _CategoriesTitlesListState extends State<CategoriesTitlesList> {
                   setState(() {
                     selectedCategory = category;
                   });
-                  // fetchProductsByCategory(category);
+                  context
+                      .read<ProductsCubit>()
+                      .fetchProductsByCategory(category);
                 },
                 child: Padding(
                   padding: EdgeInsets.only(
@@ -108,7 +112,10 @@ class _CategoriesTitlesListState extends State<CategoriesTitlesList> {
     );
   }
 
-  GestureDetector buildGestureDetector({IconData? icon, Function()? onTap}) {
+  GestureDetector buildGestureDetector({
+    IconData? icon,
+    Function()? onTap,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: CircleAvatar(

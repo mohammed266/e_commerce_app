@@ -31,17 +31,21 @@ class ItemTitlePriceCart extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: TextStyles.font14deepGreenMedium.copyWith(
-                  color: AppColor.kBlackColor,
-                  overflow: TextOverflow.ellipsis,
+              SizedBox(
+                width: 110.w,
+                child: Text(
+                  title,
+                  style: TextStyles.font14deepGreenMedium.copyWith(
+                    color: AppColor.kBlackColor,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  maxLines: 1,
                 ),
               ),
               Row(
                 children: [
                   Text(
-                    price,
+                    '\$$price',
                     style: TextStyles.font14deepGreenMedium.copyWith(
                       color: AppColor.kGrayColor,
                     ),
