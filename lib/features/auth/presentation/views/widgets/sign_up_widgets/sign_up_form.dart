@@ -135,7 +135,7 @@ class _SignUpFormState extends State<SignUpForm> {
       child: Text(
         'Sign Up',
         textAlign: TextAlign.center,
-        style: TextStyles.font30BlackBold,
+        style: TextStyles.font30GreenBold,
       ),
     );
   }

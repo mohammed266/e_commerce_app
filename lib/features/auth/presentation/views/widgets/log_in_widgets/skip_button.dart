@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/resources/styles.dart';
+import '../../../../../../core/routing/routes.dart';
 
 class SkipButton extends StatelessWidget {
   const SkipButton({super.key});
@@ -13,12 +14,7 @@ class SkipButton extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 20..horizontalSpace),
       child: TextButton(
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => HomePage(),
-          //   ),
-          // );
+          Navigator.pushReplacementNamed(context, Routes.kMainHomeView);
         },
         child: Text(
           'Skip',

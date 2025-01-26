@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/core/di/service_lacator.dart';
+import '../../../../../../core/di/service_lacator.dart';
 import '../../../../data/repos/products_repo/products_repo_impl.dart';
 import '../../../manager/products_cubit/products_cubit.dart';
 import 'package:flutter/material.dart';

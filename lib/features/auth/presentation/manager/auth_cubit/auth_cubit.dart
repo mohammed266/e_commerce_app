@@ -67,35 +67,6 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> signOutUser() async {
-    emit(AuthLoading());
-    try {
-      await _auth.signOut();
-      emit(AuthSuccess());
-    } catch (e) {
-      emit(AuthFailure(errMessage: e.toString()));
-      log('Error signOutUser: $e');
-    }
-  }
-
-  Future<String> getCurrentUserName() async {
-    User? user = _auth.currentUser;
-    String name = ''; // Provide an initial value or a default value
-
-    if (user != null) {
-      final userRef = _fireStore.collection('users').doc(user.uid);
-      final userData = await userRef.get();
-
-      if (userData.exists) {
-        name = userData.data()!['name'];
-        log('$userRef');
-      } else {
-        log('user not found');
-      }
-    }
-    return name;
-  }
-
   Future<void> _createUserDatabase(String userId, String name) async {
     emit(AuthLoading());
     try {

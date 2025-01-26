@@ -111,7 +111,7 @@ class _LogInFormState extends State<LogInForm> {
       child: Text(
         'Sign In',
         textAlign: TextAlign.center,
-        style: TextStyles.font30BlackBold,
+        style: TextStyles.font30GreenBold,
       ),
     );
   }
