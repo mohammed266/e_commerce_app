@@ -21,6 +21,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: AppColor.kBackGroundColor,
   );
+  static TextStyle font16BlackBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.kBlackColor,
+  );
   static TextStyle font14WhiteMedium = TextStyle(
     fontSize: 14.sp,
     color: Colors.white,

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/resources/app_colors.dart';
+import '../../../../../../core/shared_pref/shared_pref.dart';
+import '../../../../../../core/shared_pref/shared_pref_keys.dart';
 import '../../../manager/profile_cubit/profile_cubit.dart';
-import 'guest_user.dart';
+import '../guest_user.dart';
 import 'user_logged.dart';
 
 class ProfileViewBody extends StatefulWidget {
@@ -34,6 +36,11 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
         // Handling success state
         if (state is ProfileSuccess) {
           final userName = state.userName;
+          if(userName != null && userName.isNotEmpty){
+            SharedPref.setData(
+                key: SharedPrefKeys.userName,
+                value: userName);
+          }
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,

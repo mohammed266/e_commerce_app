@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/resources/app_colors.dart';
+import '../add_to_cart.dart';
 import 'item_image.dart';
 import 'item_title_price_cart.dart';
 
@@ -24,7 +25,9 @@ class TodayDealListItem extends StatelessWidget {
           ItemTitlePriceCart(
             title: productsModel.title,
             price: productsModel.price.toString(),
-            cartOnTap: () {},
+            cartOnTap: (){
+              addToCart(context,productsModel);
+            },
           ),
         ],
       ),
@@ -41,7 +44,3 @@ class TodayDealListItem extends StatelessWidget {
     );
   }
 }
-
-
-
-

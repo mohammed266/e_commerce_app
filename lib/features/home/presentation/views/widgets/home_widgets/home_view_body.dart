@@ -1,3 +1,4 @@
+import '../../../manager/cart_cubit/cart_cubit.dart';
 import '../../../../../../core/di/service_lacator.dart';
 import '../../../../data/repos/products_repo/products_repo_impl.dart';
 import '../../../manager/products_cubit/products_cubit.dart';
@@ -16,9 +17,16 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: BlocProvider(
-        create: (context) => ProductsCubit(getIt.get<ProductsRepoImpl>())
-          ..getTodayDealsProducts(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => ProductsCubit(getIt.get<ProductsRepoImpl>())
+              ..getTodayDealsProducts(),
+          ),
+          BlocProvider(
+            create: (context) => CartCubit(),
+          ),
+        ],
         child: Column(
           children: [
             Text(

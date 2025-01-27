@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/resources/app_colors.dart';
-import '../../../../../../core/resources/styles.dart';
-import '../../../../../../core/routing/routes.dart';
-import '../../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/resources/app_colors.dart';
+import '../../../../../core/resources/styles.dart';
+import '../../../../../core/routing/routes.dart';
+import '../../../../../core/widgets/custom_button.dart';
 
 class GuestUser extends StatelessWidget {
   const GuestUser({
