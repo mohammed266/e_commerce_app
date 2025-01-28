@@ -1,6 +1,12 @@
 # e_commerce_app
 
-A new Flutter project.
+A Flutter Project 'Ecommerce' firebase as backend and fetching data through public api.
+
+## App Screenshot
+![signIn](https://github.com/user-attachments/assets/880c923b-c0e4-42e6-b85f-847dce19d1c9)
+
+<img src="https://github.com/user-attachments/assets/880c923b-c0e4-42e6-b85f-847dce19d1c9" alt="forget_pass" width="300" height="450">
+
 
 ## Getting Started
 
@@ -14,3 +20,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Contact
+For questions, feedback, or collaboration, feel free to reach out:
+- **Email**: mohammed.abduu2020@gmail.com
