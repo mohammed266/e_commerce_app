@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../resources/app_colors.dart';
+
 class AppCachedNetworkImage extends StatelessWidget {
   const AppCachedNetworkImage({
     super.key,
@@ -29,7 +31,7 @@ class AppCachedNetworkImage extends StatelessWidget {
         maxWidthDiskCache: 800,
         placeholder: (context, url) => const Center(
           child: CircularProgressIndicator(
-            //color: AppColors.primaryBlue,
+            color: AppColor.kWhiteColor,
           ),
         ),
         errorWidget: (context, url, error) => Icon(

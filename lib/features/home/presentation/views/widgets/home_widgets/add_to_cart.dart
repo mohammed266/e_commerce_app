@@ -1,9 +1,10 @@
-import '../../../data/models/products_model.dart';
+import '../../../../../../core/resources/app_colors.dart';
+import '../../../../data/models/products_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/routing/routes.dart';
-import '../../manager/cart_cubit/cart_cubit.dart';
+import '../../../../../../core/routing/routes.dart';
+import '../../../manager/cart_cubit/cart_cubit.dart';
 
  addToCart(BuildContext context, ProductsModel productsModel) {
   User? user = FirebaseAuth.instance.currentUser;
@@ -29,12 +30,12 @@ import '../../manager/cart_cubit/cart_cubit.dart';
           productsModel.price,
         );
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        backgroundColor: Colors.orange[500],
-        content: const Text(
+      const SnackBar(
+        backgroundColor: AppColor.kOrangeAccentColor,
+        content: Text(
           'Item added to cart successfully',
           style: TextStyle(
-            color: Colors.white,
+            color: AppColor.kWhiteColor,
           ),
         ),
       ),

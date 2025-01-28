@@ -1,7 +1,9 @@
+import '../../features/home/data/models/products_model.dart';
 import 'package:flutter/material.dart';
 import '../../features/auth/presentation/views/log_in_view.dart';
 import '../../features/auth/presentation/views/sign_up_view.dart';
 import '../../features/home/presentation/views/main_home_view.dart';
+import '../../features/home/presentation/views/product_details_view.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -16,6 +18,12 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SignUpView());
       case Routes.kMainHomeView:
         return MaterialPageRoute(builder: (_) => const MainHomeView());
+      case Routes.kDetailsView:
+        return MaterialPageRoute(
+          builder: (_) => ProductDetailsView(
+            productsModel: arguments as ProductsModel,
+          ),
+        );
 
       default:
         return MaterialPageRoute(
